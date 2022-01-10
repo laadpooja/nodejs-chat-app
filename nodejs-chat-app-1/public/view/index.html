@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Chat App</title>
+   <link rel="icon" href="/img/favicon.png">
+   <link rel="stylesheet" href="/css/styles.min.css">
+</head>
+
+<body>
+
+   <div class="centered-form">
+      <div class="centered-form__box">
+         <h1> Join </h1>
+         <form id="join-form">
+            <label>Enter your nickname</label>
+            <input type="text" name="username" placeholder="Nickname" maxlength='20' required autocomplete="off">
+            <div id="rooms"></div>
+            <input type="text" id="room-input" name="roominput" placeholder="Enter room" maxlength='20' autocomplete="off" hidden>
+            <button>Join</button>
+         </form>
+
+      </div>
+
+      <script id="list-template" type="text/html">
+         <div>
+            <label>Room</label>
+            <select name="room">
+               {{#rooms}}
+                  <option value="{{roomname}}"> {{roomname}}</option>
+               {{/rooms}}
+            </select>
+         </div>
+
+      </script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="/js/index.js"></script>
+
+   </div>
+   <div class="footer">
+      <a href="https://www.freepik.com/vectors/people">People vector created by studiogstock - www.freepik.com</a>
+   </div>
+
+</body>
+
+</html>
